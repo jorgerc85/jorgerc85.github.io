@@ -1,19 +1,6 @@
-<!-- This template is in markdown, not html, so
-  it will not render beautifully when you copy and
-  paste it into your github.io site, but it will at
-  least be published. Next week you'll be creating a
-  blog template using HTML and CSS and you'll be able
-  to copy and paste the blog posts from week 1 in there
-  to make them pretty next week.
-
-  For now, please replace the title, subtitle (if desired),
-  and date with the text you would like. Markdown is pretty
-  simple, so you can just feel free to type. =) -->
-
-
 # Version Control, git and GitHub
 #### _Killer combination_
-#### September 19th, 2014
+#### September 20th, 2014
 
 Version control is a systematic approach to software development, it can be applied to many types of projects but we will be focus on software development in this post. It works by making "checkpoints" that store a snapshot of our code at a given state, this allows us to keep track of our progress and gives us backup copies of our code in case something goes wrong. If used correctly, version control will be really helpful when trying to add a new feature to our code or tracking down a bug by checking back to see where it appeared and what piece of code made it appear. But how do you keep track of all those changes? Should you make copies of your code over and over again on your computer and make sure you identify all the changes made to it and the date when they were made? Sounds really time consuming and boring, right? Luckily there is a system that can help you do this really easily, [git](http://www.git-scm.com/).
 
