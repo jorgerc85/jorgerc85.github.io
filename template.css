@@ -48,13 +48,21 @@ html {
 
 #center_header h3 {
 	font-size: 16px;
-	color: #787878;
+	/*color: #787878;*/
 	margin-top: 12px;
 	margin-bottom: 3px;
 }
 
 a {
 	color: black;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+a:visited {
+	color: gray;
 }
 
 #social_header {
