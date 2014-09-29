@@ -1,0 +1,171 @@
+html {
+	background-color: #787878;
+	font-family: Courier;
+}
+
+#header {
+	position: fixed;
+	border: 1px solid #787878;
+	background-color: #DEDEDE;
+	width: 95%;
+	height: 120px;
+	top: 10px;
+	left: 2%;
+}
+
+#img_frame { 
+	position: relative;
+	display: inline-block;
+	border: 1px solid #787878;
+	width: 10%;
+	height: 90%;
+	top: 5px;
+	float: left;
+	margin-left: 5px;
+}
+
+#img_frame img {
+	height: 100%;
+	margin-left: 30px;
+}
+
+#center_header {
+	position: relative;
+	border: 1px solid #787878;
+	display: inline-block;
+	width: 45%;
+	height: 90%;
+	margin-left: 5px;
+	padding-left: 5px;
+	top: 5px;
+}
+
+#center_header h1 {
+	font-size: 32px;
+	margin-bottom: 8px;
+	margin-top: 35px;
+}
+
+#center_header h3 {
+	font-size: 16px;
+	color: #787878;
+	margin-top: 12px;
+	margin-bottom: 3px;
+}
+
+a {
+	color: black;
+}
+
+#social_header {
+	position: relative;
+	border: 1px solid #787878;
+	display: inline-block;
+	width: 42%;
+	height: 90%;
+	top: 5px;
+	float: right;
+	margin-right: 5px;
+	padding-right: 5px;
+}
+
+#social_header h5 {
+	position: relative;
+	margin: 3px 0px 2px 0px;
+	font-size: 12px;
+	text-align: right;
+}
+
+#main {
+	position: fixed;
+	border: 1px solid #787878;
+	background-color: #DEDEDE;
+	width: 95%;
+	top: 135px;
+	height: 360px;
+	vertical-align: middle;
+	left: 2%;
+}
+
+#portfolio_prev {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #787878;
+	width: 57%;
+	height: 97%;
+	top: 5px;
+	float: left;
+	margin-left: 5px;
+	padding-left: 5px;
+}
+
+#portfolio_prev img {
+	height: 100%;
+	margin-left: 0px;
+	background-color: white;
+}
+
+#welcome_message {
+	position: relative;
+	border: 1px solid #787878;
+	display: inline-block;
+	width: 40%;
+	height: 97%;
+	top: 5px;
+	float: right;
+	margin-right: 5px;
+	padding: 5px;
+}
+
+#footer {
+	position: fixed;
+	border: 1px solid #787878;
+	background-color: #DEDEDE;
+	width: 95%;
+	height: 20%;
+	top: 500px;
+	height: 20%;
+	vertical-align: middle;
+	left: 2%;
+}
+
+#footer h4 {
+	margin: 2px;
+}
+
+#footer #contact_info {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #787878;
+	width: 45%;
+	height: 90%;
+	top: 5px;
+	float: left;
+	margin-left: 5px;
+	padding-left: 5px;
+}
+
+#footer #address {
+	position: relative;
+	border: 1px solid #787878;
+	display: inline-block;
+	width: 52%;
+	height: 90%;
+	top: 5px;
+	float: right;
+	margin-right: 5px;
+	padding-right: 5px;
+}
+
+#address p {
+	display: inline-block;
+	float: left;
+	margin-left: 70px;
+	padding-left: 20px;
+	text-align: right;
+}
+
+iframe {
+	display: inline-block;
+	float: right;
+}

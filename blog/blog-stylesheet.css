@@ -1,0 +1,70 @@
+/*stylesheet for blog-template.html*/
+
+html {
+  background-color: #ffe0b2;
+}
+
+#header {
+padding-left: 5%;
+border-top: 0px solid black;
+border-bottom: 0px solid black;
+border-radius: 30px;
+vertical-align: middle;
+height: 120px;
+background-color: #FF9966;
+}
+
+#main {
+float: left;
+width: 50%;
+padding-left: 5%;
+padding-right: 5%;
+border-left: 0px solid black;
+border-right: 0px solid black;
+}
+
+#sidebar {
+float: left;
+width: 30%;
+padding-left: 4%;
+border-left: 0px solid black;
+border-right: 0px solid black;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Verdana;
+  color: black;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  font-family: Courier;
+  color: red;
+}
+
+h4 {
+  font-style: italic;
+  font-size: 14px;
+  font-family: Courier;
+  color: gray;
+  font-weight: normal;
+}
+
+p {
+  font-style: normal;
+  font-size: 18px;
+  font-family: Courier;
+  color: navy;
+  font-weight: normal;
+}
+
+li {
+  font-style: normal;
+  font-size: 18px;
+  font-family: Courier;
+  color: navy;
+  font-weight: normal;
+}
