@@ -77,6 +77,18 @@ li {
   font-weight: normal;
 }
 
-li a {
+a {
   color: #F7F7F7;
+}
+
+span {
+  font-family: monospace;
+  font-size: 14px;
+  background-color: #787878;
+  color: white;
+  padding: 2px;
+}
+
+span span {
+  color: navy;
 }
