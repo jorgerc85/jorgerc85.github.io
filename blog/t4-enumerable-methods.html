@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jorge's Technical Blog</title>
+    <link type="text/css" rel="stylesheet" href="blog-stylesheet.css">
+  </head>
+
+  <body>
+    <div id="header">
+      <img src="../imgs/yo.jpg">
+      <h1>Jorge's Technical Blog</h1>
+    </div>
+
+    <div id="main">
+      <h2>Learning about methods: Enumerable#group_by</h2>
+      <h4>October 11th, 2014 by Jorge Rubio C.</h4>
+      <p>
+        This week's post will try to focus on one Enumerable method called 'group_by'. Since this is my first post about methods I'll give you a quick introduction to what methods are and how they are noted when using them.<br><br>
+        Methods are to objects what verbs are to subjects. Any given object has abilities, or to put it differently, all objects have or can be assigned sets of actions. This actions allow objects to give you information, operate calculations, create new objects, modify other objects or modify themselves, etc.<br><br>
+        The main idea is that a method is a set of instructions that an object can respond to or operate when they are told to do so, this is process is know as "calling a method".<br><br>
+        To call a method you first have to type in the object calling the method, right next to it you have to type in the method being called separated by a period, like this:<br><br>
+        <span>object.method</span><br><br>
+        Depending on the type (or class) of object being used, the methods available to us will vary, for example, a 'String' and an 'Integer' will be able to call different methods. Some methods will be available to more than one class, some others will be exclusive to a particular class. As I said earlier, this post will talk about one method in the Enumerable class called 'group_by'. Let's get to it.<br><br>
+        The 'group_by' method allows us to separate elements from a collection using a block as a filter. The collection of elements can be an array, a hash, a range, etc., and the method will go through each of its elements operating the block and separating the elements depending on the result of the block. Here is an example:<br><br>
+        <span>h = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 }<span> #=> {:a=>1, :b=>2, :c=>3, :d=>4, :e=>5, :f=>6}</span></span><br><br>
+        <span>h.group_by { |k,v| v%2 }<span> #=> {1=>[[:a, 1], [:c, 3], [:e, 5]], 0=>[[:b, 2], [:d, 4], [:f, 6]]}</span></span><br><br>
+        As you can see in the example above, the 'group_by' method will output a new hash that has as keys the results of the block given and as values the elements that correspond to those keys. This is an example of the method being used in an array:<br><br>
+        <span>a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]<span> #=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></span><br><br>
+        <span>a.group_by { |i| i%2 }<span> #=> {1=>[1, 3, 5, 7, 9], 0=>[2, 4, 6, 8, 10]}</span></span><br><br>
+        This method would be useful when trying to divide a hash of names and ages based on whether they are 21 or older. To achieve this you could do:<br><br>
+        <span>list = { andy: 16, amy: 24, john: 18, james: 21, jorge: 29, jane: 31, charles: 30, anne: 17, chris: 50, monica: 63, margot: 17, irene: 44 }<br><span>#=> {:andy=>16, :amy=>24, :john=>18, :james=>21, :jorge=>29, :jane=>31, :charles=>30, :anne=>17, :chris=>50, :monica=>63, :margot=>17, :irene=>44}</span></span><br><br>
+        <span>list.group_by { |name,age| age > 20 }<br><span>#=> {false=>[[:andy, 16], [:john, 18], [:anne, 17], [:margot, 17]], true=>[[:amy, 24], [:james, 21], [:jorge, 29], [:jane, 31], [:charles, 30], [:chris, 50], [:monica, 63], [:irene, 44]]}</span></span><br><br>
+        In this case, the output is a hash that contains two keys (false and true) which values are arrays of the name:age pairs (noted as arrays) from our 'list' hash that correspond to each key. This use of the 'group_by' method could help selecting a specific audience from a set of users to direct information to them or to know how many users meet that criteria.<br><br>
+        This method, just like many others, can be really powerful when trying to process data. I hope this post has helped you get a clearer idea of what methods are, how to use them and how the 'group_by' method can help you reach your goals.
+      </p>
+      <h4>Tags</h4>
+    </div>
+
+    <div id="sidebar">
+      <h2>Other Posts</h2>
+      <ul>
+        <li><a href="t1-git-blog.html">Version Control, git and GitHub - Killer combination</a></li>
+        <li><a href="t2-css-design.html">CSS Positioning: Relative, absolute, and fixed - What, when, and how</a></li>
+        <li><a href="t3-arrays-hashes.html">Arrays and Hashes - Organizing Information</a></li>
+        <li><a href="#"><!-- Post 2 --></a></li>
+        <li><a href="#"><!-- Post 3 --></a></li>
+      </ul>
+      <h2>Cultural Blog</h2>
+      <ul>
+        <li><a href="c1-chefs-kitchen.html">My Take on the DBC experience - Step into the kitchen</a></li>
+        <li><a href="c3-thinking-style.html">Thinking Style - How do I roll?</a></li>
+        <li><a href="c4-tech-issues.html">Tech Issues - Diversity in the Tech Industry</a></li>
+        <li><a href="#"><!-- Post 2 --></a></li>
+        <li><a href="#"><!-- Post 3 --></a></li>
+      </ul>
+    </div>
+
+  </body>
+</html>
+
