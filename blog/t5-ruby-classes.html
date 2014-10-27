@@ -14,64 +14,62 @@
     <div id="main">
       <h2>Ruby Classes - Classic Cars</h2>
       <h4>October 18th, 2014 by Jorge Rubio C.</h4>
-      <p>
-        Have you ever had a big inventory to keep track of? Imagine you owned a car dealership and you wanted to keep track of all your cars, their make, model, year of fabrication and other information. A useful resource to achieve this would be Classes, Ruby Classes to be precise. Throughout this blog post I will try to show you how to achieve this. Ready? Set, GO!<br><br>
-        First, let's begin by setting up our Class, a good name for our it would be 'Cars'. Let's define our Cars Class!<br><br>
-        <span>class Cars<br>
-        end</span><br><br>
-        In order to differentiate one car from another you will need to keep record of your cars' make, model and year of fabrication. Every new car we add to our Class will be a new instance of our Class and in order to accept this new car as such we will make it mandatory to input these three pieces of information (make, model and year of fabrication) when creating our new car instance.<br><br>
-        <span>class Cars<br><br>
-        def initialize(make, model, year)<br>
-        end<br><br>
-        end</span><br><br>
-        Our Class is now defined and we can add new instances to it using three pieces of information. To add a new car to our Cars Class we will do it by giving our new car a 'nickname' or short name, for example 'charger' like this:<br><br>
-        <span>charger = Cars.new("Dodge", "Charger", 1971)</span><br><br>
-        So far so good, we have our class and we have a way to add new instances to it. But what can we do now with it? As of now, not much but we can change that. Let's add a method that allows us to display the characteristics of a certain car inside our Class.<br><br>
-        In order to do this we will have to make our three characteristics into 'instance variables'. Instance variables are variables that are assigned to every instance of a Class at the moment of their creation and that you can access from all methods inside a Class. This is how they are set:<br><br>
-        <span>class Cars<br><br>
-        def initialize(make, model, year)<br>
-        @make = make<br>
-        @model = model<br>
-        @year = year<br>
-        end<br><br>
-        end</span><br><br>
-        Now that our instance variables are created we can access them by using '@variable' from anywhere inside our Class. Let's define our method!<br><br>
-        <span>class Cars<br><br>
-        def initialize(make, model, year)<br>
-        @make = make<br>
-        @model = model<br>
-        @year = year<br>
-        end<br><br>
-        def display_info<br>
-        p "Your car is a #{@make} #{@model} made in #{@year}!"<br>
-        end<br><br>
-        end</span><br><br>
-        Now that we have this new method inside our Class, let's test it out with our 'charger' instance!<br><br>
-        <span>charger.display_info<span> 	# --> "Your car is a Dodge Charger made in 1971!"</span></span><br><br>
-        Cool, uh? Now we can add new car instances to our Cars Class and we can display our cars' information whenever we want to. What else could we do? Basically, anything, it all depends on the methods we define inside our Class. To exemplify this I will add two new methods to our Class, the first one will allow us to input a maximum speed for our car and the other one will allow us to calculate the time it would take us to go a certain distance based on that maximum speed. Let's do it!<br><br>
-        <span>class Cars<br><br>
-        def initialize(make, model, year)<br>
-        @make = make<br>
-        @model = model<br>
-        @year = year<br>
-        end<br><br>
-        def display_info<br>
-        p "Your car is a #{@make} #{@model} made in #{@year}!"<br>
-        end<br><br>
-        def max_speed(max_speed)<br>
-        @max_speed = max_speed<br>
-        end<br><br>
-        def time_to_distance(distance)<br>
-        time_to_distance = distance / max_speed<br>
-        p "Your #{@make} #{@model} will take #{time_to_distance} hours to go #{distance} miles!"
-        end<br><br>
-        end</span><br><br>
-        Now that we have that set, let's use those methods. First, we will add our maximum speed:<br><br>
-        <span>charger.max_speed(150)</span><br><br>
-        Secondly, we will use our 'time_to_distance' method to do our calculation:<br><br>
-        <span>charger.time_to_distance(450)<span> 	# --> "Your Dodge Charger will take 3 hours to go 450 miles at maximum speed!"</span></span><br><br>
-        Cool, right? Now you know how to use a Class and what you can do with it. Let's get rolling!
-      </p>
+      <p>Have you ever had a big inventory to keep track of? Imagine you owned a car dealership and you wanted to keep track of all your cars, their make, model, year of fabrication and other information. A useful resource to achieve this would be Classes, Ruby Classes to be precise. Throughout this blog post I will try to show you how to achieve this. Ready? Set, GO!</p>
+      <p>First, let's begin by setting up our Class, a good name for our it would be 'Cars'. Let's define our Cars Class!</p>
+      <p class="code"><span>class Cars<br>
+      end</span></p>
+      <p>In order to differentiate one car from another you will need to keep record of your cars' make, model and year of fabrication. Every new car we add to our Class will be a new instance of our Class and in order to accept this new car as such we will make it mandatory to input these three pieces of information (make, model and year of fabrication) when creating our new car instance.</p>
+      <p class="code"><span>class Cars<br><br>
+      &#160;&#160;def initialize(make, model, year)<br>
+      &#160;&#160;end<br><br>
+      end</span></p>
+      <p>Our Class is now defined and we can add new instances to it using three pieces of information. To add a new car to our Cars Class we will do it by giving our new car a 'nickname' or short name, for example 'charger' like this:</p>
+      <p class="code"><span>charger = Cars.new("Dodge", "Charger", 1971)</span></p>
+      <p>So far so good, we have our class and we have a way to add new instances to it. But what can we do now with it? As of now, not much but we can change that. Let's add a method that allows us to display the characteristics of a certain car inside our Class.</p>
+      <p>In order to do this we will have to make our three characteristics into 'instance variables'. Instance variables are variables that are assigned to every instance of a Class at the moment of their creation and that you can access from all methods inside a Class. This is how they are set:</p>
+      <p class="code"><span>class Cars<br><br>
+      &#160;&#160;def initialize(make, model, year)<br>
+      &#160;&#160;&#160;&#160;@make = make<br>
+      &#160;&#160;&#160;&#160;@model = model<br>
+      &#160;&#160;&#160;&#160;@year = year<br>
+      &#160;&#160;end<br><br>
+      end</span></p>
+      <p>Now that our instance variables are created we can access them by using '@variable' from anywhere inside our Class. Let's define our method!</p>
+      <p class="code"><span>class Cars<br><br>
+      &#160;&#160;def initialize(make, model, year)<br>
+      &#160;&#160;&#160;&#160;@make = make<br>
+      &#160;&#160;&#160;&#160;@model = model<br>
+      &#160;&#160;&#160;&#160;@year = year<br>
+      &#160;&#160;end<br><br>
+      &#160;&#160;def display_info<br>
+      &#160;&#160;&#160;&#160;p "Your car is a #{@make} #{@model} made in #{@year}!"<br>
+      &#160;&#160;end<br><br>
+      end</span></p>
+      <p>Now that we have this new method inside our Class, let's test it out with our 'charger' instance!</p>
+      <p class="code"><span>charger.display_info<span>     # --> "Your car is a Dodge Charger made in 1971!"</span></span></p>
+      <p>Cool, uh? Now we can add new car instances to our Cars Class and we can display our cars' information whenever we want to. What else could we do? Basically, anything, it all depends on the methods we define inside our Class. To exemplify this I will add two new methods to our Class, the first one will allow us to input a maximum speed for our car and the other one will allow us to calculate the time it would take us to go a certain distance based on that maximum speed. Let's do it!<br><br></p>
+      <p class="code"><span>class Cars<br><br>
+      &#160;&#160;def initialize(make, model, year)<br>
+      &#160;&#160;&#160;&#160;@make = make<br>
+      &#160;&#160;&#160;&#160;@model = model<br>
+      &#160;&#160;&#160;&#160;@year = year<br>
+      &#160;&#160;end<br><br>
+      &#160;&#160;def display_info<br>
+      &#160;&#160;&#160;&#160;p "Your car is a #{@make} #{@model} made in #{@year}!"<br>
+      &#160;&#160;end<br><br>
+      &#160;&#160;def max_speed(max_speed) &#160;&#160;&#160;&#160;# This method can be condensed even<br>
+      &#160;&#160;&#160;&#160;@max_speed = max_speed &#160;&#160;&#160;&#160;# further using accessors.<br>
+      &#160;&#160;end &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;# Read more about them <a href="http://stackoverflow.com/questions/4370960/what-is-attr-accessor-in-ruby">here</a> and <a href="http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer">here</a>!<br><br>
+      &#160;&#160;def time_to_distance(distance)<br>
+      &#160;&#160;&#160;&#160;time_to_distance = distance / max_speed<br>
+      &#160;&#160;&#160;&#160;p "Your #{@make} #{@model} will take #{time_to_distance} hours to go &#160;&#160;&#160;&#160;#{distance} miles!"<br>
+      &#160;&#160;end<br><br>
+      end</span></p>
+      <p>Now that we have that set, let's use those methods. First, we will add our maximum speed:</p>
+      <p class="code"><span>charger.max_speed(150)</span></p>
+      <p>Secondly, we will use our 'time_to_distance' method to do our calculation:</p>
+      <p class="code"><span>charger.time_to_distance(450)<span>     # --> "Your Dodge Charger will take 3 hours to go 450 miles at maximum speed!"</span></span></p>
+      <p>Cool, right? Now you know how to use a Class and what you can do with it. Let's get rolling!</p>
       <h4>Tags</h4>
     </div>
 
@@ -82,8 +80,7 @@
         <li><a href="t2-css-design.html">CSS Positioning: Relative, absolute, and fixed - What, when, and how</a></li>
         <li><a href="t3-arrays-hashes.html">Arrays and Hashes - Organizing Information</a></li>
         <li><a href="t4-enumerable-methods.html">Learning about methods: Enumerable#group_by</a></li>
-        <li><a href="#"><!-- Post 2 --></a></li>
-        <li><a href="#"><!-- Post 3 --></a></li>
+        <li><a href="t7-oop-concepts.html">OOP Concepts - Classes vs Modules</a></li>
       </ul>
       <h2>Cultural Blog</h2>
       <ul>
@@ -91,8 +88,7 @@
         <li><a href="c3-thinking-style.html">Thinking Style - How do I roll?</a></li>
         <li><a href="c4-tech-issues.html">Tech Issues - Diversity in the Tech Industry</a></li>
         <li><a href="c5-feedback.html">Feedback - An ongoing learning experience</a></li>
-        <li><a href="#"><!-- Post 2 --></a></li>
-        <li><a href="#"><!-- Post 3 --></a></li>
+        <li><a href="c6-stereotype-threat.html">Stereotype Threat - My Personal Experience</a></li>
       </ul>
     </div>
 
