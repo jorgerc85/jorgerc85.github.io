@@ -1,0 +1,62 @@
+body {
+	background-color: #19297C;
+	font-family: monospace;
+	font-size: 62.8%;
+}
+h1 {
+	position: fixed;
+	width: 50%;
+	left: 25%;
+	top: 0.1em;
+	text-align: center;
+	color: #D5D5D7;
+	font-size: 4em;
+}
+h3 {
+	position: fixed;
+	width: 50%;
+	left: 25%;
+	top: 4em;
+	text-align: center;
+	color: #D5D5D7;
+	font-size: 2em;
+}
+h4 {
+	position: fixed;
+	width: 60%;
+	left: 20%;
+	top: 8em;
+	text-align: center;
+	color: #D5D5D7;
+	font-size: 1.5em;
+}
+#game {
+	position: fixed;
+	height: 70%;
+	width: 70%;
+	left: 14.5%;
+	top: 25%;
+	background-color: white;
+	border: 0.5em solid black;
+}
+img {
+	position: fixed;
+	height: 10em;
+	width: 10em;
+}
+#skaterKid {
+	left: 15%;
+	top: 50%;
+}
+#oldMan {
+	left: 35%;
+	top: 55%;
+}
+#badDog {
+	left: 55%;
+	top: 55%;
+}
+#goal {
+	left: 75%;
+	top: 55%;
+}

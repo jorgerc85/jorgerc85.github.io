@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Skater Kid Game</title>
+	<!-- <link rel="stylesheet" type="text/css" href="game.css"> -->
+</head>
+
+<body>
+	<h1>Welcome to the Skater Kid Game!</h1>
+	<h3>Avoid all enemies and get to the goal!</h3>
+	<h4>You have two units of health, each time you touch an enemy you lose one unit. Lose all units and Game Over. Press "Down Arrow" to start!</h4>
+
+	<div id="game">
+		<img src="imgs/skaterkid.png" id="skaterKid">
+		<img src="imgs/oldman.png" id="oldMan">
+		<img src="imgs/baddog.png" id="badDog">
+		<img src="imgs/goal.png" id="goal">
+		<img src="imgs/nohearts.png" id="noHearts">
+		<img src="imgs/oneheart.png" id="oneHeart">
+		<img src="imgs/twohearts.png" id="twoHearts">
+	</div>
+
+	<script type="text/javascript">
+
+	// Set objects and properties.
+
+		var skaterKid = {
+			name: "Skater Kid",
+			health: 2,
+			alive: true,
+			positionX: 15,
+			positionY: 55,
+		}
+		var oldMan = {
+			name: "Old Man",
+			positionX: 35,
+			positionY: 55,
+		}
+		var badDog = {
+			name: "Bad Dog",
+			positionX: 55,
+			positionY: 55,
+		}
+		var goal = {
+			name: "Goal",
+			positionX: 75,
+			positionY: 55,
+		}
+
+		// Set starting position for skaterKid for every try.
+
+		function skaterKidStartPosition() {
+			document.getElementById("skaterKid").style.top = "55%"
+			skaterKid.positionY = 55
+			document.getElementById("skaterKid").style.left = "15%"
+			skaterKid.positionX = 15;
+		}
+
+		// Detect key input and triggers movement for skaterKid.
+
+		document.onkeydown = checkKey;
+
+		function checkKey(e) {
+		    e = e || window.event;
+		    if (e.keyCode == '38') {
+		        moveUp(skaterKid)
+		    }
+		    else if (e.keyCode == '40') {
+		        moveDown(skaterKid)
+		    }
+		    else if (e.keyCode == '37') {
+		        moveLeft(skaterKid)
+		    }
+		    else if (e.keyCode == '39') {
+		        moveRight(skaterKid)
+		    }
+		    getToGoal() // Evaluates if at goal every keystroke.
+		}
+
+		// Sets margins for skaterKid and ratio of movement per keystroke.
+
+		function moveUp(object) {
+			if (document.getElementById("skaterKid").style.top > "26%") {
+				document.getElementById("skaterKid").style.top = (object.positionY -= 1) + "%";
+			}
+		}
+
+		function moveDown(object) {
+			if (document.getElementById("skaterKid").style.top < "82%") {
+				document.getElementById("skaterKid").style.top = (object.positionY += 1) + "%"; 
+			}
+		}
+
+		function moveLeft(object) {
+			if (document.getElementById("skaterKid").style.left >= "16%") {
+				document.getElementById("skaterKid").style.left = (object.positionX -= 1) + "%";
+			}
+		}
+
+		function moveRight(object) {
+			if (document.getElementById("skaterKid").style.left <= "77%") {
+				document.getElementById("skaterKid").style.left = (object.positionX += 1) + "%";
+			}	
+		}
+
+		// Set timers for enemies movement.
+
+		var t = window.setTimeout(skaterKidStartPosition, 0);
+		var t1 = window.setInterval(moveOldMan, 30);
+		var t2 = window.setInterval(moveBadDog, 30);
+
+		// Controls enemies direction.
+
+		var oldManDirection = 1;
+		var badDogDirection = 1;
+
+
+		function changeOldManDirection(object) {
+			if (object.positionY > 80) {
+				oldManDirection = -1
+			}
+			else if (object.positionY < 28) {
+				oldManDirection = 1
+			}
+		}
+
+		function moveOldMan() {
+			changeOldManDirection(oldMan)
+			document.getElementById("oldMan").style.top = (oldMan.positionY += oldManDirection) + "%";
+			touchOldMan()
+			deadKid()
+		}
+
+		function changeBadDogDirection(object) {
+			if (object.positionY > 80) {
+				badDogDirection = 1
+			}
+			else if (object.positionY < 28) {
+				badDogDirection = -1
+			}
+		}
+
+		function moveBadDog() {
+			changeBadDogDirection(badDog)
+			document.getElementById("badDog").style.top = (badDog.positionY -= badDogDirection) + "%";
+			touchBadDog()
+			deadKid()
+		}
+
+		// Control behavior for touching enemies and dead.
+
+		function touchOldMan() {
+			if ((Math.abs(skaterKid.positionY - oldMan.positionY) <= 5) && (Math.abs(skaterKid.positionX - oldMan.positionX) <= 4)) {
+				skaterKid.health -= 1
+				document.getElementById("twoHearts").style.display = "none";
+				if (skaterKid.health == 0) {
+					document.getElementById("oneHeart").style.display = "none";
+				}
+				alert("The old man hit you with his cane!")
+				skaterKidStartPosition();
+			}
+		}
+
+		function touchBadDog() {
+			if ((Math.abs(skaterKid.positionY - badDog.positionY) <= 5) && (Math.abs(skaterKid.positionX - badDog.positionX) <= 4)) {
+				skaterKid.health -= 1
+				document.getElementById("twoHearts").style.display = "none";
+				if (skaterKid.health == 0) {
+					document.getElementById("oneHeart").style.display = "none";
+				}
+				alert("The bad dog bit you!")
+				skaterKidStartPosition();
+			}
+		}
+
+		var deadKid = function() {
+			if (skaterKid.health == 0) {
+				skaterKid.alive = false
+				clearInterval(t1)
+				clearInterval(t2)
+				alert("YOU LOST! The kid is dead!")
+				skaterKidStartPosition();
+			}
+		}
+
+		// Control behavior for getting to goal.
+
+		function getToGoal() {
+			if ((Math.abs(skaterKid.positionY - goal.positionY) <= 2) && (Math.abs(skaterKid.positionX - goal.positionX) <= 2)) {
+				clearInterval(t1)
+				clearInterval(t2)
+				alert("YOU WIN! You reached the goal!")
+				skaterKidStartPosition();
+			}
+		}
+
+	</script>
+
+	<style type="text/css">
+		body {
+		background-color: #19297C;
+		font-family: monospace;
+		font-size: 62.8%;
+		}
+		h1 {
+			position: fixed;
+			width: 50%;
+			left: 25%;
+			top: 0.1em;
+			text-align: center;
+			color: #D5D5D7;
+			font-size: 4em;
+		}
+		h3 {
+			position: fixed;
+			width: 50%;
+			left: 25%;
+			top: 4em;
+			text-align: center;
+			color: #D5D5D7;
+			font-size: 2em;
+		}
+		h4 {
+			position: fixed;
+			width: 60%;
+			left: 20%;
+			top: 8em;
+			text-align: center;
+			color: #D5D5D7;
+			font-size: 1.5em;
+		}
+		#game {
+			position: fixed;
+			height: 70%;
+			width: 70%;
+			left: 14.5%;
+			top: 25%;
+			background-color: white;
+			border: 0.5em solid black;
+		}
+		img {
+			position: fixed;
+		}
+		#skaterKid {
+			left: 15%;
+			top: 55%;
+			height: 10em;
+			width: 10em;
+		}
+		#oldMan {
+			left: 35%;
+			top: 55%;
+			height: 10em;
+			width: 10em;
+		}
+		#badDog {
+			left: 55%;
+			top: 55%;
+			height: 10em;
+			width: 10em;
+		}
+		#goal {
+			left: 75%;
+			top: 55%;
+			height: 10em;
+			width: 10em;
+		}
+		#twoHearts {
+			height: 5em;
+			width: 10em;
+		}
+		#oneHeart {
+			height: 5em;
+			width: 10em;
+		}
+		#noHearts {
+			height: 5em;
+			width: 10em;
+		}
+	</style>
+
+</body>
+
+</html>
