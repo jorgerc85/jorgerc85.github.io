@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>Jorge's Technical Blog</title>
+    <link type="text/css" rel="stylesheet" href="blog-stylesheet.css">
+  </head>
+
+  <body>
+    <div id="header">
+      <img src="../imgs/yo.jpg">
+      <h1>Jorge's Technical Blog</h1>
+    </div>
+
+    <div id="main">
+      <h2>JavaScript - Ruby classes vs. JavaScript constructor functions</h2>
+      <h4>November 2nd, 2014 by Jorge Rubio C.</h4>
+      <p>Learning a new programming language has been a very interesting experience, learning a second programming language has been an even more interesting one, just like learning Spanish as my native language and then learning English as a second one.</p>
+      <p>Learning one language is similar than learning a second one but to me there is one key difference, being able to compare. Learning JavaScript has been an interesting experience because I've been able to use my knowledge of Ruby as a reference point to understand the logic and syntax of JavaScript.</p>
+      <p>As an example of this, I will dedicate this blog post to compare Ruby classes and JavaScript constructor functions. I have already covered Ruby classes in a previous post <a href="t5-ruby-classes.html">here</a>, so I will focus on creating a parallel example to that one here to compare both approaches.</p>
+      <p>JavaScript constructor functions allow you to create new functions/objects that inherit characteristics from the original one much like Ruby classes do but with certain, many differences. Let's see them in action:</p>
+      <p class="code"><span>var Cars = function Cars() {<br>
+            &#160;&#160;// ...<br>
+            }<br><br>
+      var newCar = new Cars();</span></p>
+      <p>Using the '.prototype' function, you will be able to set properties, functions/methods and other objects to be inherited from the constructor function (the original 'Cars()' function) to all of the newly created functions based on it. This way, they will all share a similar set of properties and functions when created.</p>
+      <p class="code"><span>Cars.prototype.doors = 2;<br>
+      var newCar = new Cars();<br><br>
+      newCar.doors;&#160;&#160;<span>// --> 2</span></span></p>
+      <p>We can use this same pattern to inherit methods/functions. The only difference is that instead of assigning a value to a property, like in the example above, we assign a function. Like This:</p>
+      <p class="code"><span>Cars.prototype.drive = function drive() { return "You have arrived to your destination!"};<br>
+      var newCar = new Cars();<br><br>
+      newCar.drive;&#160;&#160;<span>// --> "You have arrived to your destination!"</span></span></p>
+      <p>Something really cool about the way JS operates is that you can both change properties of the constructor function afterwards and see those changes reflected on all of its child functions, and that you can also override properties for specific child functions is we want to.</p>
+      <p class="code"><span>// Change made after newCar's creation.<br>
+      Cars.prototype.doors = 4;<br><br>
+      newCar.doors;&#160;&#160;<span>// --> 4</span><br><br>
+      // Override!<br>
+      newCar.doors = 2;<br>
+      newCar.doors;&#160;&#160;<span>// --> 2</span><br><br>
+      var secondCar = new Cars();<br>
+      secondCar.doors;&#160;&#160;<span>// --> 4</span></span></p>
+      <p>But what if I want to give my cars a distinguishing property in the moment of their creation?</p>
+      <p class="code"><span>var Cars = function Cars(brand) {<br>
+            &#160;&#160;this.brand = brand;&#160;&#160;// 'this' in JS is <span>"like"</span> 'self' is in Ruby.<br>
+            }<br><br>
+      var thirdCar = new Cars("Nissan");<br><br>
+      thirdCar.brand;&#160;&#160;<span>// --> "Nissan"</span></span></p>
+      <p>The approach JS has to "classes" is very different from Ruby's approach. It allows for certain similar capabilities but it also lacks part of the structure that Ruby has in place to define classes. This can be good or bad depending on what you're trying to do.</p>
+      <p>Now that you've read about both approaches, which one do you prefer? More class structure like in Ruby? or the simple and flexible constructor functions of JS?</p>
+      <h4>Tags</h4>
+    </div>
+
+    <div id="sidebar">
+      <h2>Other Posts</h2>
+      <ul>
+        <li><a href="t1-git-blog.html">Version Control, git and GitHub - Killer combination</a></li>
+        <li><a href="t2-css-design.html">CSS Positioning: Relative, absolute, and fixed - What, when, and how</a></li>
+        <li><a href="t3-arrays-hashes.html">Arrays and Hashes - Organizing Information</a></li>
+        <li><a href="t4-enumerable-methods.html">Learning about methods: Enumerable#group_by</a></li>
+        <li><a href="t5-ruby-classes.html">Ruby Classes - Classic Cars</a></li>
+        <li><a href="t6-oop-concepts.html">OOP Concepts - Classes vs Modules</a></li>
+      </ul>
+      <h2>Cultural Blog</h2>
+      <ul>
+        <li><a href="c1-chefs-kitchen.html">My Take on the DBC experience - Step into the kitchen</a></li>
+        <li><a href="c3-thinking-style.html">Thinking Style - How do I roll?</a></li>
+        <li><a href="c4-tech-issues.html">Tech Issues - Diversity in the Tech Industry</a></li>
+        <li><a href="c5-feedback.html">Feedback - An ongoing learning experience</a></li>
+        <li><a href="c6-stereotype-threat.html">Stereotype Threat - My Personal Experience</a></li>
+        <li><a href="c7-values.html">Values</a></li>
+      </ul>
+    </div>
+
+  </body>
+</html>
