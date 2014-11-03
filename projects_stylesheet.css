@@ -3,6 +3,12 @@ html {
 	font-family: Courier;
 }
 
+html a:link {
+	color: black;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
 html a:visited {
 	color: gray;
 	text-decoration: underline;
