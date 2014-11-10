@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Prototype Function Cheat Sheet for Arrays and Objects</title>
+    <link rel="stylesheet" type="text/css" href="cheatsheet.css">
+  </head>
+
+  <body>
+    <h1>JavaScript Prototype Function Cheat Sheet for Arrays and Objects</h1>
+    <a href="index.html" id="home">Home</a>
+    <table class="functions">
+      <thead>
+          <tr>
+          <th class="row-prototype">
+            Prototype/Syntax
+          </th>
+          <th class="row-summary">
+            Summary
+          </th>
+          <th class="row-example">
+            Example
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>  <td class="code"> <em>Array.prototype.pop()</em><br>arr.pop() </td> <td>  Removes the last element from an array and returns that element.  </td> <td class="code"> var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];<br>
+
+        var popped = myFish.pop();<br>
+
+        console.log(myFish);<br> // ['angel', 'clown', 'mandarin', 'sturgeon']
+
+        console.log(myFish);<br> // ['angel', 'clown', 'mandarin' ]
+
+        console.log(popped);<br> // 'sturgeon' </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.push()</em><br>arr.push(element1, ..., elementN)  </td> <td>  Adds one or more elements to the end of an array and returns the new length of the array. </td> <td class="code"> var sports = ['soccer', 'baseball'];<br>
+        var total = sports.push('football', 'swimming');<br>
+        console.log(sports);<br> // ['soccer', 'baseball', 'football', 'swimming'] </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.reverse()</em><br>arr.reverse() </td> <td>  Reverses the order of the elements of an array — the first becomes the last, and the last becomes the first.  </td> <td class="code"> var myArray = ['one', 'two', 'three'];<br>
+        myArray.reverse();<br>
+        console.log(total);<br> // 4 </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.shift()</em><br>arr.shift() </td> <td>  Removes the first element from an array and returns that element. </td> <td class="code"> var myFish = ['angel', 'clown', 'mandarin', 'surgeon'];<br>
+
+        console.log('myFish before: ' + myFish);<br>
+
+        var shifted = myFish.shift();<br>
+
+        console.log('myFish after: ' + myFish);<br>
+        console.log('Removed this element: ' + shifted);<br>
+        myFish before: angel,clown,mandarin,surgeon
+        myFish after: clown,mandarin,surgeon
+        Removed this element: angel  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.sort()</em><br>arr.sort([compareFunction])  </td> <td>  Sorts the elements of an array in place and returns the array.  </td> <td class="code"> var items = ['réservé', 'premier', 'cliché', 'communiqué', 'café', 'adieu'];<br>
+        items.sort(function (a, b) {
+          return a.localeCompare(b);<br>
+        });<br>
+        // items is ['adieu', 'café', 'cliché', 'communiqué', 'premier', 'réservé']  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.splice()</em><br>array.splice(index, howMany[, element1[, ...[, elementN]]]) array.splice(index) // SpiderMonkey/Firefox extension, in this case howMany=array.length-index
+         </td> <td>  Adds and/or removes elements from an array. </td> <td class="code"> var myFish = ['angel', 'clown', 'mandarin', 'surgeon'];<br>
+
+        // removes 0 elements from index 2, and inserts 'drum'
+        var removed = myFish.splice(2, 0, 'drum');<br>
+        // myFish is ['angel', 'clown', 'drum', 'mandarin', 'surgeon']
+        // removed is [], no elements removed
+
+        // removes 1 element from index 3
+        removed = myFish.splice(3, 1);<br>
+        // myFish is ['angel', 'clown', 'drum', 'surgeon']
+        // removed is ['mandarin'] </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.unshift()</em><br>arr.unshift([element1[, ...[, elementN]]])  </td> <td>  Adds one or more elements to the front of an array and returns the new length of the array. </td> <td class="code"> var arr = [1, 2];<br>
+
+        arr.unshift(0);<br> // result of call is 3, the new array length
+        // arr is [0, 1, 2]
+
+        arr.unshift(-2, -1);<br> // = 5
+        // arr is [-2, -1, 0, 1, 2]
+
+        arr.unshift([-3]);<br>
+        // arr is [[-3], -2, -1, 0, 1, 2]  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.concat()</em><br>var new_array = old_array.concat(value1[, value2[, ...[, valueN]]])  </td> <td>  Returns a new array comprised of this array joined with other array(s) and/or value(s). </td> <td class="code"> var alpha = ['a', 'b', 'c'],
+            numeric = [1, 2, 3];<br>
+
+        var alphaNumeric = alpha.concat(numeric);<br>
+        console.log(alphaNumeric);<br> // Result: ['a', 'b', 'c', 1, 2, 3] </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.join()</em><br>str = arr.join([separator = ','])  </td> <td>  Joins all elements of an array into a string. </td> <td class="code"> var a = new Array('Wind', 'Rain', 'Fire');<br>
+        var myVar1 = a.join();<br>      // assigns 'Wind,Rain,Fire' to myVar1
+        var myVar2 = a.join(', ');<br>  // assigns 'Wind, Rain, Fire' to myVar2
+        var myVar3 = a.join(' + ');<br> // assigns 'Wind + Rain + Fire' to myVar3  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.slice()</em><br>arr.slice([begin[, end]]) </td> <td>  Extracts a section of an array and returns a new array. </td> <td class="code"> var fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];<br>
+        var citrus = fruits.slice(1, 3);<br>
+
+        // citrus contains ['Orange','Lemon']  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.toString()</em><br>arr.toString() </td> <td>  Returns a string representing the array and its elements. Overrides the Object.prototype.toString() method. </td> <td class="code"> var monthNames = ['Jan', 'Feb', 'Mar', 'Apr'];<br>
+        var myVar = monthNames.toString();<br> // assigns 'Jan,Feb,Mar,Apr' to myVar.  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.toLocaleString()</em><br>arr.toLocaleString();  </td> <td>  Returns a localized string representing the array and its elements. Overrides the Object.prototype.toLocaleString() method. </td> <td class="code"> var number = 1337;<br>
+        var date = new Date();<br>
+        var myArr = [number, date, 'foo'];<br>
+
+        var str = myArr.toLocaleString();<br>
+        console.log(str);<br>
+        // prints '1.337,6.12.2013 19:37:35,foo'
+        // if run in a German (de-DE) locale with timezone Europe/Berlin </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.indexOf()</em><br>arr.lastIndexOf(searchElement[, fromIndex = arr.length])  </td> <td>  Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found.  </td> <td class="code"> var array = [2, 5, 9, 2];<br>
+        var index = array.lastIndexOf(2);<br>
+        // index is 3
+        index = array.lastIndexOf(7);<br>
+        // index is -1
+        index = array.lastIndexOf(2, 3);<br>
+        // index is 3
+        index = array.lastIndexOf(2, 2);<br>
+        // index is 0
+        index = array.lastIndexOf(2, -2);<br>
+        // index is 0
+        index = array.lastIndexOf(2, -1);<br>  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.lastIndexOf()</em><br>arr.lastIndexOf(searchElement[, fromIndex = arr.length])  </td> <td>  Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.  </td> <td class="code"> var array = [2, 5, 9, 2];<br>
+        var index = array.lastIndexOf(2);<br>
+        // index is 3
+        index = array.lastIndexOf(7);<br>
+        // index is -1
+        index = array.lastIndexOf(2, 3);<br>
+        // index is 3
+        index = array.lastIndexOf(2, 2);<br>
+        // index is 0
+        index = array.lastIndexOf(2, -2);<br>
+        // index is 0
+        index = array.lastIndexOf(2, -1);<br>
+        // index is 3  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.forEach()</em><br>arr.forEach(callback[, thisArg])  </td> <td>  Calls a function for each element in the array. </td> <td class="code"> function logArrayElements(element, index, array) {
+          console.log('a[' + index + '] = ' + element);<br>
+        }
+
+        // Note ellision, there is no member at 2 so it isn't visited
+        [2, 5, , 9].forEach(logArrayElements);<br>
+        // logs:
+        // a[0] = 2
+        // a[1] = 5
+        // a[3] = 9  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.every()</em><br>arr.every(callback[, thisArg])  </td> <td>  Returns true if every element in this array satisfies the provided testing function.  </td> <td class="code"> function isBigEnough(element, index, array) {
+          return element >= 10;<br>
+        }
+        var passed = [12, 5, 8, 130, 44].every(isBigEnough);<br>
+        // passed is false
+        passed = [12, 54, 18, 130, 44].every(isBigEnough);<br>
+        // passed is true  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.some()</em><br>arr.some(callback[, thisArg])  </td> <td>  Returns true if at least one element in this array satisfies the provided testing function. </td> <td class="code"> function isBigEnough(element, index, array) {
+          return element >= 10;<br>
+        }
+        var passed = [2, 5, 8, 1, 4].some(isBigEnough);<br>
+        // passed is false
+        passed = [12, 5, 8, 1, 4].some(isBigEnough);<br>
+        // passed is true  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.filter()</em><br>arr.filter(callback[, thisArg])  </td> <td>  Creates a new array with all of the elements of this array for which the provided filtering function returns true.  </td> <td class="code"> function isBigEnough(element) {
+          return element >= 10;<br>
+        }
+        var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);<br>
+        // filtered is [12, 130, 44] </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.map()</em><br>arr.map(callback[, thisArg])  </td> <td>  Creates a new array with the results of calling a provided function on every element in this array. </td> <td class="code"> var numbers = [1, 4, 9];<br>
+        var roots = numbers.map(Math.sqrt);<br>
+        // roots is now [1, 2, 3], numbers is still [1, 4, 9]  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.reduce()</em><br>arr.reduce(callback[, initialValue]) </td> <td>  Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value. </td> <td class="code"> var total = [0, 1, 2, 3].reduce(function(a, b) {
+          return a + b;<br>
+        });<br>
+        // total == 6  </td> </tr>
+        <tr>  <td class="code"> <em>Array.prototype.reduceRight()</em><br>arr.reduceRight(callback[, initialValue]) </td> <td>  Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value. </td> <td class="code"> var total = [0, 1, 2, 3].reduceRight(function(a, b) {
+          return a + b;<br>
+        });<br>
+        // total == 6  </td> </tr>
+        <tr>  <td class="code"> <em>Object.prototype.hasOwnProperty()</em><br>obj.hasOwnProperty(prop)  </td> <td>  Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain. </td> <td class="code"> o = new Object();<br>
+        o.prop = 'exists';<br>
+
+        function changeO() {
+          o.newprop = o.prop;<br>
+          delete o.prop;<br>
+        }
+
+        o.hasOwnProperty('prop');<br>   // returns true
+        changeO();<br>
+        o.hasOwnProperty('prop');<br>   // returns false </td> </tr>
+        <tr>  <td class="code"> <em>Object.prototype.isPrototypeOf()</em><br>prototypeObj.isPrototypeOf(obj)  </td> <td>  Returns a boolean indication whether the specified object is in the prototype chain of the object this method is called upon. </td> <td class="code"> function Fee() {
+          // ...
+        }
+
+        function Fi() {
+          // ...
+        }
+        Fi.prototype = new Fee();<br>
+
+        function Fo() {
+          // ...
+        }
+        Fo.prototype = new Fi();<br>
+
+        function Fum() {
+          // ...
+        }
+        Fum.prototype = new Fo();<br>  </td> </tr>
+        <tr>  <td class="code"> <em>Object.prototype.propertyIsEnumerable()</em><br>obj.propertyIsEnumerable(prop)  </td> <td>  Returns a boolean indicating if the internal ECMAScript DontEnum attribute is set.  </td> <td class="code"> var o = {};<br>
+        var a = [];<br>
+        o.prop = 'is enumerable';<br>
+        a[0] = 'is enumerable';<br>
+
+        o.propertyIsEnumerable('prop');<br>   // returns true
+        a.propertyIsEnumerable(0);<br>        // returns true  </td> </tr>
+        <tr>  <td class="code"> <em>Object.prototype.toLocaleString()</em><br>obj.toLocaleString(); </td> <td>  Calls toString(). </td> <td class="code">   </td> </tr>
+        <tr>  <td class="code"> <em>Object.prototype.toString()</em><br>obj.toString()  </td> <td>  Returns a string representation of the object.  </td> <td class="code"> var o = new Object();<br>
+        o.toString();<br>           // returns [object Object] </td> </tr>
+        <tr>  <td class="code"> <em>Object.prototype.valueOf()</em><br>object.valueOf() </td> <td>  Returns the primitive value of the specified object.  </td> <td class="code"> o = new Object();<br>
+        myVar = o.valueOf();<br>      // [object Object] </td> </tr>
+      </tbody>
+      <tfoot>
+
+      </tfoot>
+
+
+    </table>
+    <h2>Other Recommended Cheat Sheets</h2>
+    <div id="links"><a href="">Link 1</a><a href="">Link 2</a><a href="">Link 3</a><a href="">Link 4</a></div>
+  </body>
+</html>

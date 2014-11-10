@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>Jorge's Technical Blog</title>
+    <link type="text/css" rel="stylesheet" href="blog-stylesheet.css">
+  </head>
+
+  <body>
+    <div id="header">
+      <img src="../imgs/yo.jpg">
+      <h1>Jorge's Technical Blog</h1>
+      <a href="../index.html">Home</a>
+    </div>
+
+    <div id="main">
+      <h2>TDD: If it's worth building, it's worth testing</h2>
+      <h4>November 9th, 2014 by Jorge Rubio C.</h4>
+      <p>Test-Driven Development (TDD) is a process used in software development that combines Test-First Development (TFD) techniques and refactoring to approach the development process in a much more efficient manner.</p>
+      <p class="code"><span>&#160;&#160;&#160;&#160;Test-Driven Development <span>=</span> Test-First Development <span>+</span> Refactoring</span></p>
+      <p>The Test-First Development approach states that you should write test for your code before writing any functional code to your program. This tests should fail initially and the functional code written should aim to pass them. On the other side, refactoring is a programming technique that aims to improve code by making it easier to understand and modify by making small changes that improve your design. Refactoring doesn't add new functionality, it just edits your code to make it better.</p>
+      <p>Refactoring can be useful both after a new feature has been added and before adding a new feature to older code. The use of refactoring before adding new code can help making the new features easier to implement since the code already in existence could be easier to modify if we edit it first.</p>
+      <p>The use of both of these techniques combined should allow for an incremental expansion of the code in a program. First, you add a test (this should be a small and simple test). Second, you create the code necessary to pass the test. As a third step, you refactor your code and then go back to the beginning to add a new test. This loop should continue until the initial functionality that was expected is achieved.</p>
+      <p class="code"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>------></span> Add test <span><------</span><br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span> [Pass]<br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>v</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span><br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;Run the tests <span>--</span><br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span> [Fail]<br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>v</span><br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[Pass]<span>|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;Make small changes <span><--</span><br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[Development<span>|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span> [Fail]<br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Continues]<span>|</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>v</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span><br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>-------</span> Run the tests <span>--------</span><br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span></span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>|</span> [Pass]<br>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span></span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span>v</span> [Development stops]<br></span></p>
+      <p>This approach should help you tackling errors as early as possible in the development process and should allow you to find the piece of code that generates the error faster. It is a lot easier to figure out what is wrong with a small piece of code than thousands of lines of it.</p>
+      <p>There are many ways in which TDD can be applied, scaled and used in other development processes, like database development for example. Although it is not a rule to use it, it can save you many hours of work and can improve the quality of your code greatly.</p>
+      <p>As a summary, TDD is both a great tool for testing your code at an early stage of development and a great way of producing better quality code.</p>
+      <p>If you want to learn more about <a href="http://agiledata.org/essays/tdd.html">TDD</a> and <a href="http://www.agiledata.org/essays/databaseRefactoring.html#Refactoring">Refactoring</a>, this are some great resources.</p>
+      <h4>Tags</h4>
+    </div>
+
+    <div id="sidebar">
+      <h2>Other Posts</h2>
+      <ul>
+        <li><a href="t1-git-blog.html">Version Control, git and GitHub - Killer combination</a></li>
+        <li><a href="t2-css-design.html">CSS Positioning: Relative, absolute, and fixed - What, when, and how</a></li>
+        <li><a href="t3-arrays-hashes.html">Arrays and Hashes - Organizing Information</a></li>
+        <li><a href="t4-enumerable-methods.html">Learning about methods: Enumerable#group_by</a></li>
+        <li><a href="t5-ruby-classes.html">Ruby Classes - Classic Cars</a></li>
+        <li><a href="t7-JavaScript.html">JavaScript - Ruby classes vs. JavaScript constructor functions</a></li>
+      </ul>
+      <h2>Cultural Blog</h2>
+      <ul>
+        <li><a href="c1-chefs-kitchen.html">My Take on the DBC experience - Step into the kitchen</a></li>
+        <li><a href="c3-thinking-style.html">Thinking Style - How do I roll?</a></li>
+        <li><a href="c4-tech-issues.html">Tech Issues - Diversity in the Tech Industry</a></li>
+        <li><a href="c5-feedback.html">Feedback - An ongoing learning experience</a></li>
+        <li><a href="c6-stereotype-threat.html">Stereotype Threat - My Personal Experience</a></li>
+        <li><a href="c7-values.html">Values</a></li>
+        <li><a href="c8-conflict.html">Conflict</a></li>
+      </ul>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,106 @@
+html {
+  background-color: #484848;
+  font-family: Courier;
+}
+
+html a:link {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+html a:visited {
+  color: #E4E4E4;
+  text-decoration: underline;
+}
+
+html a:hover {
+  color: #535353;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+html a:active {
+  color: #383838;
+  text-decoration: underline;
+}
+
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+  text-align: center;
+  background-color: #C4C4C4;
+  border-radius: 5px;
+  padding: 1% 0.5% 1% 0.5%;
+  box-shadow: 5px 5px 10px rgba(10, 10, 10, 0.5);
+}
+
+#home {
+position: absolute;
+top: 15%;
+left: 95%; 
+}
+
+.functions {
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  padding: 0.5%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(10, 10, 10, 0.5);
+}
+
+.functions td {
+  overflow: hidden;
+  overflow: ellipsis;
+}
+
+th {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.row-prototype {
+  width:25%;
+}
+
+.row-summary {
+  width:25%;
+}
+
+.row-example {
+  width:50%;
+}
+
+.code {
+  font-family: monospace;
+}
+
+h2 {
+  margin-top: 4%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5%;
+  width: 50%;
+  text-align: center;
+}
+
+#links {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
+  width: 50%;
+  text-align: center;
+}
+
+#links a {
+  margin-left: 3%;
+  margin-right: 3%;
+}
