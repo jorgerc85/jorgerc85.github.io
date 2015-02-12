@@ -78,6 +78,10 @@ html a:active {
   margin-top: -17.7%;
 }
 
+#about {
+	display: none;
+}
+
 #footer {
   position: fixed;
   left: 0px;
