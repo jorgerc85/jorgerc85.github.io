@@ -105,6 +105,14 @@ html a:active {
 	display: none;
 }
 
+#blog_show {
+	display: none;
+	position: absolute;
+	height: 78%;
+	bottom: 8px;
+	overflow-y:scroll;
+}
+
 #footer {
   position: fixed;
   left: 0px;
