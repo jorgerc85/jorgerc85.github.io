@@ -67,6 +67,17 @@ html a:active {
   margin: 1em 0;
 }
 
+#content {
+  position: absolute;
+  float: right;
+  top: 50%;
+  right: 0px;
+  width: 65%;
+  height: 80%;
+  margin-right: 15px;
+  margin-top: -17.7%;
+}
+
 #footer {
   position: fixed;
   left: 0px;
