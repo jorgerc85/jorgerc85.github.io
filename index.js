@@ -1,5 +1,6 @@
 window.onload = function() {
   sectionShow();
+  blogController();
 };
 
 function sectionShow() {
@@ -16,3 +17,18 @@ function hideSections(sections) {
     document.getElementById(sections[i]).style.display = 'none';
   };
 };
+
+function blogController() {
+  document.getElementById('blog_control').addEventListener('click', function(event) {
+    var xml = new XMLHttpRequest();
+    xml.onreadystatechange = function() {
+      if (xml.readyState == 4 && xml.status == 200) {
+        blog_div = document.getElementById('blog_show');
+        blog_div.style.display = 'inline';
+        blog_div.innerHTML = xml.responseText;
+      };
+    };
+    xml.open('GET', 'blog/t1-git-blog.html', true);
+    xml.send();
+  });
+}
