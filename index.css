@@ -41,3 +41,29 @@ html a:active {
   display: inline-block;
   margin: 10px;
 }
+
+#title {
+  position: absolute;
+  float: left;
+  top: 50%;
+  width: 30%;
+  height: 50%;
+  margin-top: -12.5%;
+  margin-left: 15px;
+}
+
+#title > h2 {
+  top: 50%;
+  height: 10%;
+  margin-top: -5%;
+  position: relative;
+  font-size: 1.5em;
+}
+
+#title > h4 {
+  position: relative;
+  top: 50%;
+  font-size: 1em;
+  margin: 1em 0;
+}
+
