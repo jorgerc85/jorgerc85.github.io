@@ -79,6 +79,10 @@ html a:active {
   margin-top: -17.7%;
 }
 
+#home {
+	display: none;
+}
+
 #about {
 	display: none;
 }
