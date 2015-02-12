@@ -16,6 +16,7 @@ html a:visited {
 }
 
 html a:hover {
+	cursor: pointer;
   font-weight: bold;
   text-decoration: none;
   border-bottom: 1px solid black;
