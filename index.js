@@ -3,8 +3,9 @@ window.onload = function() {
 };
 
 function sectionShow() {
-  document.getElementById('about_btn').addEventListener('click', function(event) {
+  var sectionControls = {'home_btn': 'home', 'about_btn': 'about', 'projects_btn': 'projects', 'blog_btn': 'blog'}
+  document.getElementById('menu').addEventListener('click', function(event) {
     event.preventDefault();
-    document.getElementById('about').style.display = 'inline'
-  })
-}
+    document.getElementById(sectionControls[event.target.id]).style.display = 'inline';
+  });
+};
