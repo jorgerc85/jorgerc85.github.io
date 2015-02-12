@@ -82,6 +82,20 @@ html a:active {
 	display: none;
 }
 
+#projects {
+	display: none;
+}
+
+#skater img {
+  height: 200px;
+}
+
+#skater_img:hover {
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: none;
+}
+
 #footer {
   position: fixed;
   left: 0px;
