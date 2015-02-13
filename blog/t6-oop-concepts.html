@@ -1,89 +1,45 @@
- <!DOCTYPE html>
-<html>
-  <head>
-    <title>Jorge's Technical Blog</title>
-    <link type="text/css" rel="stylesheet" href="blog-stylesheet.css">
-  </head>
-
-  <body>
-    <div id="header">
-      <img src="../imgs/yo.jpg">
-      <h1>Jorge's Technical Blog</h1>
-      <a href="../index.html">Home</a>
-    </div>
-
-    <div id="main">
-      <h2>OOP Concepts - Classes vs Modules</h2>
-      <h4>October 26th, 2014 by Jorge Rubio C.</h4>
-      <p>This week I will cover a concept of Object Oriented Programming that I think is very interesting and this is the difference between classes and modules.</p>
-      <p><a href="t5-ruby-classes.html">Last week</a> I explained classes and how they were useful when trying to model a real life object or system and the different behaviors associated to it.</p>
-      <p>This week I will explain modules and their use and then I will show you a brief example to compare both of them.</p>
-      <p>In the hierarchical structure of objects in Ruby, modules are parents to classes, they are a more general type of object and have a more basic function. Classes have the main function of creating instances of itself whenever needed and assign a predefined set of methods to them when they are created.</p>
-      <p>The main difference that Modules have when compared to Classes is that they can't create instances of itself, they are a collection of methods that you can use to keep them all in one place and assign them to many objects without having to repeat you code everywhere. Let's see an example of this.</p>
-      <p class="code"><span>class Bird<br><br>
-      &#160;&#160;def initialize(name)<br>
-      &#160;&#160;&#160;&#160;@name = name<br>
-      &#160;&#160;end<br><br>
-      &#160;&#160;def fly<br>
-      &#160;&#160;&#160;&#160;p "Your #{@name} is flying!"<br>
-      &#160;&#160;end<br><br>
-      end<br><br>
-      eagle = Bird.new("Eagle")<br>
-      eagle.fly&#160;&#160;<span># --> "Your Eagle is flying!"</span></span></p>
-      <p>Here you can see a simple class, Bird, and the creation of one instance of it called 'eagle'. Any bird created within the Bird class will be able to fly. This is how classes work, a class with methods in it ensures that all instances created from it can execute those methods. Let's see what a Module looks like.</p>
-      <p class="code"><span>module AnimalBehavior<br><br>
-      &#160;&#160;def eat<br>
-      &#160;&#160;&#160;&#160;p "Your #{name} is eating!"<br>
-      &#160;&#160;end<br><br>
-      &#160;&#160;def reproduce<br>
-      &#160;&#160;&#160;&#160;p "Your #{name} has reproduced!"<br>
-      &#160;&#160;end<br><br>
-      &#160;&#160;def die<br>
-      &#160;&#160;&#160;&#160;p "Your #{name} just died :("<br>
-      &#160;&#160;end<br><br>
-      end</span></p>
-      <p>This module contains a set of methods that we call AnimalBehavior, this set of behaviors can be applied to birds but also to other animals so keeping them in one place is a smart strategy to save you time when assigning this behaviors to other classes of animals. Let's see how we can assign this behaviors to Bird</p>
-      <p class="code"><span>class Bird<br><br>
-      include AnimalBehavior<br><br>
-      &#160;&#160;def initialize(name)<br>
-      &#160;&#160;&#160;&#160;@name = name<br>
-      &#160;&#160;end<br><br>
-      &#160;&#160;def fly<br>
-      &#160;&#160;&#160;&#160;p "Your #{@name} is flying!"<br>
-      &#160;&#160;end<br><br>
-      end<br><br>
-      eagle = Bird.new("Eagle")<br>
-      eagle.fly&#160;&#160;<span># --> "Your Eagle is flying!"</span><br>
-      eagle.eat&#160;&#160;<span># --> "Your Eagle is eating!"</span><br>
-      eagle.die&#160;&#160;<span># --> "Your Eagle just died :("</span></span></p>
-      <p>There are other ways in which you can use Modules to assign behaviors to multiple objects, you can read about them <a href="http://www.tutorialspoint.com/ruby/ruby_modules.htm">here!</a></p>
-      <p>I hope this post has helped you understand a bit better how modules and classes are similar, how they differ and how you can use them together. See you next week!</p>
-      <h4>Tags</h4>
-    </div>
-
-    <div id="sidebar">
-      <h2>Other Posts</h2>
-      <ul>
-        <li><a href="t1-git-blog.html">Version Control, git and GitHub - Killer combination</a></li>
-        <li><a href="t2-css-design.html">CSS Positioning: Relative, absolute, and fixed - What, when, and how</a></li>
-        <li><a href="t3-arrays-hashes.html">Arrays and Hashes - Organizing Information</a></li>
-        <li><a href="t4-enumerable-methods.html">Learning about methods: Enumerable#group_by</a></li>
-        <li><a href="t5-ruby-classes.html">Ruby Classes - Classic Cars</a></li>
-        <li><a href="t7-JavaScript.html">JavaScript - Ruby classes vs. JavaScript constructor functions</a></li>
-        <li><a href="t8-tech.html">TDD: If it's worth building, it's worth testing</a></li>
-      </ul>
-      <h2>Cultural Blog</h2>
-      <ul>
-        <li><a href="c1-chefs-kitchen.html">My Take on the DBC experience - Step into the kitchen</a></li>
-        <li><a href="c3-thinking-style.html">Thinking Style - How do I roll?</a></li>
-        <li><a href="c4-tech-issues.html">Tech Issues - Diversity in the Tech Industry</a></li>
-        <li><a href="c5-feedback.html">Feedback - An ongoing learning experience</a></li>
-        <li><a href="c6-stereotype-threat.html">Stereotype Threat - My Personal Experience</a></li>
-        <li><a href="c7-values.html">Values</a></li>
-        <li><a href="c8-conflict.html">Conflict</a></li>
-        <li><a href="c9-questions.html">Questions - Sometimes it's a matter of context</a></li>
-      </ul>
-    </div>
-
-  </body>
-</html>
+<h2>OOP Concepts - Classes vs Modules</h2>
+<h4>October 26th, 2014 by Jorge Rubio C.</h4>
+<p>This week I will cover a concept of Object Oriented Programming that I think is very interesting and this is the difference between classes and modules.</p>
+<p><a href="t5-ruby-classes.html">Last week</a> I explained classes and how they were useful when trying to model a real life object or system and the different behaviors associated to it.</p>
+<p>This week I will explain modules and their use and then I will show you a brief example to compare both of them.</p>
+<p>In the hierarchical structure of objects in Ruby, modules are parents to classes, they are a more general type of object and have a more basic function. Classes have the main function of creating instances of itself whenever needed and assign a predefined set of methods to them when they are created.</p>
+<p>The main difference that Modules have when compared to Classes is that they can't create instances of itself, they are a collection of methods that you can use to keep them all in one place and assign them to many objects without having to repeat you code everywhere. Let's see an example of this.</p>
+<p class="code"><span>class Bird<br><br>
+&#160;&#160;def initialize(name)<br>
+&#160;&#160;&#160;&#160;@name = name<br>
+&#160;&#160;end<br><br>
+&#160;&#160;def fly<br>
+&#160;&#160;&#160;&#160;p "Your #{@name} is flying!"<br>
+&#160;&#160;end<br><br>
+end<br><br>
+eagle = Bird.new("Eagle")<br>
+eagle.fly&#160;&#160;<span># --> "Your Eagle is flying!"</span></span></p>
+<p>Here you can see a simple class, Bird, and the creation of one instance of it called 'eagle'. Any bird created within the Bird class will be able to fly. This is how classes work, a class with methods in it ensures that all instances created from it can execute those methods. Let's see what a Module looks like.</p>
+<p class="code"><span>module AnimalBehavior<br><br>
+&#160;&#160;def eat<br>
+&#160;&#160;&#160;&#160;p "Your #{name} is eating!"<br>
+&#160;&#160;end<br><br>
+&#160;&#160;def reproduce<br>
+&#160;&#160;&#160;&#160;p "Your #{name} has reproduced!"<br>
+&#160;&#160;end<br><br>
+&#160;&#160;def die<br>
+&#160;&#160;&#160;&#160;p "Your #{name} just died :("<br>
+&#160;&#160;end<br><br>
+end</span></p>
+<p>This module contains a set of methods that we call AnimalBehavior, this set of behaviors can be applied to birds but also to other animals so keeping them in one place is a smart strategy to save you time when assigning this behaviors to other classes of animals. Let's see how we can assign this behaviors to Bird</p>
+<p class="code"><span>class Bird<br><br>
+include AnimalBehavior<br><br>
+&#160;&#160;def initialize(name)<br>
+&#160;&#160;&#160;&#160;@name = name<br>
+&#160;&#160;end<br><br>
+&#160;&#160;def fly<br>
+&#160;&#160;&#160;&#160;p "Your #{@name} is flying!"<br>
+&#160;&#160;end<br><br>
+end<br><br>
+eagle = Bird.new("Eagle")<br>
+eagle.fly&#160;&#160;<span># --> "Your Eagle is flying!"</span><br>
+eagle.eat&#160;&#160;<span># --> "Your Eagle is eating!"</span><br>
+eagle.die&#160;&#160;<span># --> "Your Eagle just died :("</span></span></p>
+<p>There are other ways in which you can use Modules to assign behaviors to multiple objects, you can read about them <a href="http://www.tutorialspoint.com/ruby/ruby_modules.htm">here!</a></p>
+<p>I hope this post has helped you understand a bit better how modules and classes are similar, how they differ and how you can use them together. See you next week!</p>
