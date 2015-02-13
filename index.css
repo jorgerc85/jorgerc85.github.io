@@ -105,6 +105,13 @@ html a:active {
 	display: none;
 }
 
+#blog_control > a:hover {
+	cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: none;
+}
+
 #blog_show {
 	display: none;
 	position: absolute;
