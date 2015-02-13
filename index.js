@@ -23,17 +23,32 @@ function blogController() {
   var blogList = ['blog/t8-tech.html', 'blog/t7-JavaScript.html', 'blog/t6-oop-concepts.html', 'blog/t5-ruby-classes.html',
                   'blog/t4-enumerable-methods.html', 'blog/t3-arrays-hashes.html', 'blog/t2-css-design.html',
                   'blog/t1-git-blog.html'];
-  ajaxWrapper(blogList[i])
+  controlBlogNavBtns(i, blogList.length - 1)
+  ajaxWrapper(blogList[i]);
   document.getElementById('blog_control').addEventListener('click', function(event) {
     event.preventDefault();
     if (event.target.id == 'show_older_btn' && i < blogList.length - 1) {
       i += 1;
+      controlBlogNavBtns(i, blogList.length - 1);
       ajaxWrapper(blogList[i]);
     } else if (event.target.id == 'show_newer_btn' && i > 0) {
       i -= 1;
+      controlBlogNavBtns(i, blogList.length - 1);
       ajaxWrapper(blogList[i]);
     };
   });
+};
+
+function controlBlogNavBtns(i, length) {
+  if (i == 0) {
+    document.getElementById('show_newer_btn').style.display = 'none'
+  } else if (i == length) {
+    document.getElementById('show_older_btn').style.display = 'none'
+  } else {
+    document.getElementById('show_older_btn').style.display = 'inline'
+    document.getElementById('show_newer_btn').style.display = 'inline'
+
+  }
 };
 
 function ajaxWrapper(blog_page) {
