@@ -26,10 +26,10 @@ function blogController() {
   ajaxWrapper(blogList[i])
   document.getElementById('blog_control').addEventListener('click', function(event) {
     event.preventDefault();
-    if (event.target.id == 'show_older_btn') {
+    if (event.target.id == 'show_older_btn' && i < blogList.length - 1) {
       i += 1;
       ajaxWrapper(blogList[i]);
-    } else if (event.target.id == 'show_newer_btn') {
+    } else if (event.target.id == 'show_newer_btn' && i > 0) {
       i -= 1;
       ajaxWrapper(blogList[i]);
     };
