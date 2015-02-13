@@ -124,42 +124,28 @@ html a:active {
   text-indent: 5%;
 }
 
-#blog_show .code {
-  background-color: #787878;
+.code {
+  background-color:#3B3B3B;
   width: 95%;
   padding: 5px 5px 5px 10px;
   margin: 0px 5px 0px 5px;
-  text-indent: 0px;
+  text-indent: none;
 }
 
-#blog_show span {
+.code a {
+  color: #F7F7F7;
+}
+
+.code span {
   font-family: monospace;
   font-size: 14px;
-  background-color: #787878;
-  color: white;
+  background-color:#3B3B3B;
+  color: #FFFFB3;
   padding: 2px;
 }
 
-#blog_show #quote {
-  background-color: #B8B8B8;
-  text-indent: 5%;
-  text-align: justify;
-  color: #383838;
-  font-size: 18px;
-  font-family: Courier;
-  font-style: italic;
-  font-weight: bold;
-}
-
-#blog_show span span {
-  color: navy;
-}
-
-#blog_show li {
-  font-style: normal;
-  font-size: 18px;
-  color: #F7F7F7;
-  font-weight: normal;
+.code span span {
+  color: #BABABA;
 }
 
 #footer {
