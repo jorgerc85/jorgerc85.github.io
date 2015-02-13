@@ -1,6 +1,5 @@
 window.onload = function() {
   sectionShow();
-  blogController();
 };
 
 function sectionShow() {
@@ -9,6 +8,7 @@ function sectionShow() {
     event.preventDefault();
     hideSections(sectionControls);
     document.getElementById(sectionControls[event.target.id]).style.display = 'inline';
+    if (event.target.id == 'blog_btn') { blogController() };
   });
 };
 
