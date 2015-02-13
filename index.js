@@ -20,15 +20,21 @@ function hideSections(sections) {
 
 function blogController() {
   document.getElementById('blog_control').addEventListener('click', function(event) {
-    var xml = new XMLHttpRequest();
-    xml.onreadystatechange = function() {
-      if (xml.readyState == 4 && xml.status == 200) {
-        blog_div = document.getElementById('blog_show');
-        blog_div.style.display = 'inline';
-        blog_div.innerHTML = xml.responseText;
-      };
+    event.preventDefault();
+      ajaxWrapper(blogList[i]);
     };
-    xml.open('GET', 'blog/t1-git-blog.html', true);
-    xml.send();
   });
-}
+};
+
+function ajaxWrapper(blog_page) {
+  var xml = new XMLHttpRequest();
+  xml.onreadystatechange = function() {
+    if (xml.readyState == 4 && xml.status == 200) {
+      blog_div = document.getElementById('blog_show');
+      blog_div.style.display = 'inline';
+      blog_div.innerHTML = xml.responseText;
+    };
+  };
+  xml.open('GET', blog_page, true);
+  xml.send();
+};
