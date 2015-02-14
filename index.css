@@ -1,5 +1,5 @@
 html {
-  background-color: #E5E5E5;
+  background-color: #C3BCFF;
   font-family: Courier;
   margin: 0%;
 }
@@ -19,7 +19,7 @@ html a:hover {
 	cursor: pointer;
   font-weight: bold;
   text-decoration: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
 }
 
 html a:active {
@@ -30,6 +30,8 @@ html a:active {
 #top {
   width: 100%;
   height: 50px;
+  background-color: black;
+  color: white;
 }
 
 #menu {
