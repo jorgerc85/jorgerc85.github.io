@@ -34,13 +34,13 @@ html a:active {
   color: white;
 }
 
-#menu {
-  float: right;
-  right: 10px;
-  margin: 0;
+#top ul {
+  top: 50%;
+  margin-top: -1.5%;
+  padding-left: 0px;
 }
 
-#menu > li {
+#top li {
   display: inline-block;
   margin: 10px;
 }
@@ -68,6 +68,9 @@ html a:active {
   top: 50%;
   font-size: 1em;
   margin: 1em 0;
+#menu {
+  float: right;
+  padding-left: 40px;
 }
 
 #content {
