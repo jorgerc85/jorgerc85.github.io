@@ -6,9 +6,11 @@ function sectionShow() {
   var sectionControls = {'home_btn': 'home', 'about_btn': 'about', 'projects_btn': 'projects', 'blog_btn': 'blog'}
   document.getElementById('menu').addEventListener('click', function(event) {
     event.preventDefault();
-    hideSections(sectionControls);
-    document.getElementById(sectionControls[event.target.id]).style.display = 'inline';
-    if (event.target.id == 'blog_btn') { blogController() };
+    if (sectionControls[event.target.id]) {
+      hideSections(sectionControls);
+      document.getElementById(sectionControls[event.target.id]).style.display = 'inline';
+      if (event.target.id == 'blog_btn') { blogController() };
+    };
   });
 };
 
