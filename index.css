@@ -45,29 +45,6 @@ html a:active {
   margin: 10px;
 }
 
-#title {
-  position: absolute;
-  float: left;
-  top: 50%;
-  width: 30%;
-  height: 50%;
-  margin-top: -12.5%;
-  margin-left: 15px;
-}
-
-#title > h2 {
-  top: 50%;
-  height: 10%;
-  margin-top: -5%;
-  position: relative;
-  font-size: 1.5em;
-}
-
-#title > h4 {
-  position: relative;
-  top: 50%;
-  font-size: 1em;
-  margin: 1em 0;
 #menu {
   float: right;
   padding-left: 40px;
@@ -76,12 +53,11 @@ html a:active {
 #content {
   position: absolute;
   float: right;
-  top: 50%;
+  top: 20%;
   right: 0px;
-  width: 75%;
+  width: 80%;
   height: 82%;
   margin-right: 15px;
-  margin-top: -20%;
 }
 
 #home {
@@ -120,9 +96,10 @@ html a:active {
 #blog_show {
 	display: none;
 	position: absolute;
-	height: 80%;
-	bottom: 0px;
-	overflow-y:scroll;
+	max-height: 62%;
+	max-width: 80%%;
+	top: 28%;
+	overflow-y: scroll;
 }
 
 #blog_show p {
