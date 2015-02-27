@@ -60,26 +60,8 @@ html a:active {
   margin-right: 15px;
 }
 
-#home {
-	display: none;
-}
-
-#about {
-	display: none;
-}
-
 #projects {
 	display: none;
-}
-
-#skater img {
-  height: 200px;
-}
-
-#skater_img:hover {
-  font-weight: bold;
-  text-decoration: none;
-  border-bottom: none;
 }
 
 #blog {
